@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+WRITTEN BY: Melody Chan-Yoeun
+EMAIL: chanyoem@uci.edu
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Melody Chan-Yoeun">
+  <meta name="description" content="my personal portfolio">
+   <!-- you would link to an external stylesheet here! -->
+   <link rel="stylesheet" href="styles.css">
+   <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <title>Melody Chan-Yoeun</title>
+</head>
+
+<body>
+  <div id="header">
+    <div class="container">
+      <nav class="navbar">
+        <ul class="nav_links">
+            <li><a href="index.html">Home </a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="https://www.linkedin.com/in/melody-chan-yoeun-b50aa8262/">LinkedIn</a></li>
+        </ul>
+      </nav>
+      <div class="header_text">
+        <h1>Hello, my name is <span>Melody!</span></h1>
+        <h2>graphic and UI/UX designer</h2>
+      </div>
+    </div>
+  </div>
+  <!-- ABOUT -->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about_col_1">
+          <img src="images/headshot.jpg" alt="melody chan-yoeun">
+        </div>
+        <div class="about_col_2">
+          <h2 class="subtitle">Get to know me!</h2>
+          <p>My name is Melody Chan-Yoeun and I am currently a 4th year at UC Irvine studying Art and Informatics. I am currently working towards designing to promote diversity and inclusivity. Outside of design, some of my hobbies are rock climbing, letter writing, and custom keyboards! I also am very active in my school's Cambodian culture club where we share our culture with others and create community! Thanks for stopping by :)
+          </p>
+          <div class="tab_titles">
+            <p class="tab_links active" onclick="opentab('skills')">Skills</p>
+            <p class="tab_links" onclick="opentab('experience')">Experience</p>
+            <p class="tab_links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab_contents active_tab" id="skills">
+            <ul>
+              <li><span>UI/UX</span><br>
+                Designing Interfaces Utilizing Figma<br>
+                Web Design with HTML
+              </li>
+              <li><span>Graphic Design</span><br>
+                Proficient with Adobe Photoshop & Illustrator<br>
+                Proficient in Canva
+              </li>
+              <li><span>Social Media</span><br>
+                Social Media Presence Management of Organizations<br>
+                Designing Instagram Posts
+              </li>
+            </ul>
+          </div>
+          <div class="tab_contents" id="experience">
+            <ul>
+              <li><span>2023-Present</span><br>Production Tech at <br>
+                UC Irvine Department of Film & Media Studies</li>
+              <li><span>2022-2023</span><br> Marketing Officer at <br>
+                UC Irvine Cambodian Awareness Organization</li>
+              <li><span>2021-2023</span><br>Office Assistant at <br>
+                UC Irvine Department of Film & Media Studies</li>
+            </ul>
+          </div>
+          <div class="tab_contents" id="education">
+            <ul>
+              <li><span>UC Irvine 4th Year</span><br>Double majoring in Arts and Informatics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    var tablinks = document.getElementsByClassName("tab_links");
+    var tabcontents = document.getElementsByClassName("tab_contents");
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active_tab");
+      }
+      event.currentTarget.classList.add("active");
+      document.getElementById(tabname).classList.add("active_tab");
+    }
+  </script>
+</body>
+</html>
