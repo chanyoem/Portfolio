@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Melody Chan-Yoeun">
   <meta name="description" content="my personal portfolio projects">
-
    <link rel="stylesheet" href="styles.css">
    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,28 +45,83 @@
           </p>
         </div>
       </div>
-    
-    <div class="container">
-      <div class="row">
-        <h2 class="subtitle">UCI Department of Film & Media Studies Marketing</h2>
-        <p>I am currently a Production Technician for UCI's Department of Film & Media Studies (FMS) where I handle most of the marketing for FMS events. I create fliers, social media posts, and website assets. I utilize Canva, Adobe Illustrator + Photoshop, and creativity!</p>
-      </div>
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="fms_col">
-          <img src="images/AboutMeMelody.jpg" alt="about me flyer">
+        <div class="project_col_1">
+          <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides">
+              <div class="numbertext">1 / 3</div>
+              <img src="images/AboutMeMelody.jpg" style="width:100%">
+              <div class="text">Caption Text</div>
+            </div>
+          
+            <div class="mySlides">
+              <div class="numbertext">2 / 3</div>
+              <img src="images/CoffeeandInternship.jpg" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+          
+            <div class="mySlides">
+              <div class="numbertext">3 / 3</div>
+              <img src="images/ChangingtheSubjectPrint.png" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
-        <div class="fms_col">
-          <img src="images/CoffeeandInternship.jpg" alt="flyer for coffee and internship event">
-        </div>
-        <div class="fms_col">
-          <img src="images/ChangingtheSubjectPrint.png" alt="flyer for an fms event">
+        <div class="project_col_2">
+          <h2 class="subtitle">UCI Department of Film & Media Studies Marketing</h2>
+          <p>I am currently a Production Technician for UCI's Department of Film & Media Studies (FMS) where I handle most of the marketing for FMS events. I create fliers, social media posts, and website assets. I utilize Canva, Adobe Illustrator + Photoshop, and creativity!</p>
         </div>
       </div>
     </div>
-    </div>
+
   </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
 </body>
 </html>
